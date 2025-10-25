@@ -1,82 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuildInfinity8</title>
+    <title>Build Infinity 8 - Rapid Software Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset default margins and paddings */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body, html {
-            height: 100%;
-        }
-
+        /* Custom styles */
         body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple icon placeholder */
+        .app-icon-placeholder {
+            width: 100%;
+            padding-bottom: 100%; /* 1:1 Aspect Ratio */
+            border-radius: 1rem; /* rounded-xl */
             display: flex;
-            justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: #fff;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 600px;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .button {
-            padding: 12px 30px;
-            font-size: 1rem;
-            color: #4facfe;
-            background: #fff;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-
-        .button:hover {
-            background: #e0f7ff;
-        }
-
-        /* Minimal responsive design */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .button {
-                padding: 10px 20px;
-            }
+            justify-content: center;
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 600; /* font-semibold */
+            color: white;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>BuildInfinity8</h1>
-        <p>We are crafting something amazing. Stay tuned!</p>
-        <button class="button">Notify Me</button>
-    </div>
+<body class="bg-gray-900 text-gray-100 antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-white">
+                Build Infinity <span class="text-transparent bg-clip-text bg-[linear-gradient(135deg,#4facfe,#00f2fe)]">8</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#apps" class="text-gray-300 hover:text-white transition-colors">Our Apps</a>
+                <a href="#mission" class="text-gray-300 hover:text-white transition-colors">Our Mission</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Button (Optional) -->
+            <div class="md:hidden">
+                <button class="text-gray-300 hover:text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative py-32 md:py-48 bg-[linear-gradient(135deg,#4facfe,#00f2fe)] text-center overflow-hidden">
+            <!-- Background glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-400/30 rounded-full blur-3xl opacity-50"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                    Software solutions for real problems.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+                    We're a product studio that rapidly builds and launches new software. 
+                    Browse our latest creations designed to make your life easier.
+                </p>
+                <a href="#apps" class="bg-white text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105">
+                    View Our Apps
+                </a>
+            </div>
+        </section>
+
+        <!-- App Gallery Section -->
+        <section id="apps" class="py-24 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Our Apps</h2>
+                    <p class="text-lg text-gray-400">Practical tools for everyday challenges.</p>
+                </div>
+                
+                <!-- App Grid -->
+                <!-- The JavaScript will populate this grid -->
+                <div id="app-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- App cards will be inserted here -->
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Our Mission Section -->
+        <section id="mission" class="py-24 bg-gray-900">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Our Mission</h2>
+                <p class="text-xl text-gray-300 leading-relaxed mb-4">
+                    We're Build Infinity 8, a team of friends and builders.
+                </p>
+                <p class="text-lg text-gray-400 leading-relaxed">
+                    Our mission is to solve real-world problems by rapidly building and launching useful software. 
+                    Instead of spending years on a single "perfect" product, we focus on speed and utility to get practical solutions into your hands, faster. We build, we launch, we learn, and we build again.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-gray-800">
+            <div class="container mx-auto px-6 max-w-3xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Get In Touch</h2>
+                <p class="text-lg text-gray-400 mb-8">
+                    Have an idea for an app? Want to give feedback on one of ours? 
+                    We'd love to hear from you.
+                </p>
+                <a href="mailto:contact@infinity8.com" class="bg-[linear-gradient(135deg,#4facfe,#00f2fe)] text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:opacity-90 transition-opacity duration-300 transform hover:scale-105">
+                    contact@infinity8.com
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700/50">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 Build Infinity 8. All rights reserved.</p>
+            <!-- Add links to Privacy/Terms if you have them -->
+            <!--
+            <div class="mt-4 space-x-6">
+                <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-400">Terms of Service</a>
+            </div>
+            -->
+        </div>
+    </footer>
+
+    <!-- JavaScript to build the app gallery -->
+    <script>
+        // --- THIS IS YOUR "DATABASE" ---
+        // To add a new app, just add a new object to this list.
+        const apps = [
+            {
+                icon: '🚀', // You can use an emoji...
+                bgColor: 'bg-red-500', // ...or a background color for a placeholder
+                name: 'App One',
+                tagline: 'The fastest way to manage your team tasks and projects.',
+                tags: ['Productivity', 'Team'],
+                url: '#' // Link to the app
+            },
+            {
+                icon: '📊',
+                bgColor: 'bg-blue-500',
+                name: 'App Two',
+                tagline: 'Track your personal finances and budget with AI insights.',
+                tags: ['Finance', 'AI'],
+                url: '#'
+            },
+            {
+                icon: '✍️',
+                bgColor: 'bg-green-500',
+                name: 'App Three',
+                tagline: 'A distraction-free writing app for notes and long-form content.',
+                tags: ['Writing', 'Utility'],
+                url: '#'
+            },
+            {
+                icon: '🖼️',
+                bgColor: 'bg-yellow-500',
+                name: 'App Four (Example)',
+                tagline: 'Clean up and enhance your photos in one click.',
+                tags: ['Photos', 'Utility'],
+                url: '#'
+            },
+            // --- ADD YOUR NEXT APP HERE ---
+            // {
+            //     icon: '💡',
+            //     bgColor: 'bg-purple-500',
+            //     name: 'App Five (New)',
+            //     tagline: 'A new app tagline goes here.',
+            //     tags: ['New', 'Awesome'],
+            //     url: '#'
+            // },
+        ];
+
+        // --- This code builds the gallery ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = document.getElementById('app-gallery');
+            if (!gallery) return;
+
+            // Clear any placeholder content
+            gallery.innerHTML = '';
+
+            // Loop through the apps and create a card for each
+            apps.forEach(app => {
+                // Create tags HTML
+                const tagsHtml = app.tags.map(tag => `
+                    <span class="text-xs font-semibold bg-gray-600/50 text-indigo-300 px-2 py-0.5 rounded-full">${tag}</span>
+                `).join(' ');
+
+                // Create the card element
+                const card = document.createElement('div');
+                card.className = 'bg-gray-800/50 border border-gray-700/50 rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-indigo-500/20 hover:border-gray-600/80';
+                
+                card.innerHTML = `
+                    <!-- App Icon Placeholder -->
+                    <div class="app-icon-placeholder ${app.bgColor}">
+                        ${app.icon}
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-semibold text-white mb-2">${app.name}</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">${app.tagline}</p>
+                        
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            ${tagsHtml}
+                        </div>
+                        
+                        <!-- Button -->
+                        <a href="${app.url}" class="mt-auto block w-full text-center bg-[linear-gradient(135deg,#4facfe,#00f2fe)] text-white font-semibold px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity">
+                            View App
+                        </a>
+                    </div>
+                `;
+                
+                // Add the new card to the gallery
+                gallery.appendChild(card);
+            });
+        });
+    </script>
+
 </body>
 </html>
+
+
