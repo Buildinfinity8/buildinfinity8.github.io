@@ -1,0 +1,5 @@
+   User-agent: *
+   Allow: /
+   Disallow: /private/
+
+   Sitemap: https://buildinfinity8.github.io/sitemap.xml
