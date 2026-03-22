@@ -1,0 +1,21 @@
+{
+  "name": "Build Infinity 8",
+  "short_name": "Infinity8",
+  "description": "Relentless Product Lab building solutions for daily friction.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#818cf8",
+  "icons": [
+    {
+      "src": "buildinfinity8.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "buildinfinity8.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
