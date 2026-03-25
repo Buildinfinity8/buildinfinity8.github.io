@@ -577,6 +577,31 @@
       box-shadow: 0 0 20px rgba(192, 132, 252, 0.4);
     }
 
+    .policy-content {
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .policy-content strong {
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .policy-content ul {
+      margin-bottom: 24px;
+      padding-left: 20px;
+    }
+
+    .policy-content li {
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .policy-content h1 {
+        font-size: 2rem;
+      }
+    }
+
     /* --- RESPONSIVE --- */
     @media (max-width: 1024px) {
       .hero-grid {
@@ -656,6 +681,7 @@
       }
 
       .hero-actions .btn {
+      
         width: 100%;
       }
 
@@ -693,13 +719,62 @@
       </button>
     </header>
 
-    <section class="hero-grid">
-  Privacy policy comming soon please consider it 
-    </section>
+    <main class="policy-content animate-in delay-2" style="max-width: 800px; margin: 0 auto; padding-bottom: 80px;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 24px;">Privacy Policy</h1>
+      <p style="color: var(--text-muted); margin-bottom: 40px;">Last Updated: March 25, 2026</p>
+
+      <section style="margin-bottom: 40px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 16px; color: #818cf8;">1. Introduction</h2>
+        <p style="margin-bottom: 16px;">Welcome to Build Infinity 8. We are committed to protecting your privacy. This Privacy Policy explains how our browser extensions, including <strong>Infinity V Cam</strong> and <strong>PomoInfinity</strong>, handle user data.</p>
+      </section>
+
+      <section style="margin-bottom: 40px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 16px; color: #818cf8;">2. Data Collection and Usage</h2>
+        <p style="margin-bottom: 16px;">We believe in minimal data collection. Our extensions are designed to work locally on your device.</p>
+        
+        <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Infinity V Cam</h3>
+        <ul style="margin-left: 20px; margin-bottom: 16px; color: var(--text-muted);">
+          <li><strong>Camera Access:</strong> Infinity V Cam requires access to your camera to provide virtual background and video enhancement features. This video processing is performed <strong>entirely locally</strong> on your device. No video or image data is ever transmitted to our servers or any third parties.</li>
+          <li><strong>Settings:</strong> We store your preferences (e.g., chosen filters, backgrounds) locally in your browser's storage.</li>
+        </ul>
+
+        <h3 style="font-size: 1.1rem; margin-bottom: 8px;">PomoInfinity</h3>
+        <ul style="margin-left: 20px; margin-bottom: 16px; color: var(--text-muted);">
+          <li><strong>Usage Data:</strong> We do not collect personal identification information. PomoInfinity may store your timer settings and productivity stats locally in your browser.</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 40px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 16px; color: #818cf8;">3. Data Storage and Handling</h2>
+        <p style="margin-bottom: 16px;">All data processed by our extensions (such as video streams in Infinity V Cam or timer settings in PomoInfinity) is handled in real-time within your browser's memory or stored in your browser's local storage (Chrome Storage API).</p>
+        <p style="color: var(--text-muted);">We do not use external databases to store your personal information or usage history.</p>
+      </section>
+
+      <section style="margin-bottom: 40px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 16px; color: #818cf8;">4. Data Sharing</h2>
+        <p style="margin-bottom: 16px;">We <strong>do not share, sell, or trade</strong> your user data with any third parties. There are no external parties that have access to your data through our products.</p>
+      </section>
+
+      <section style="margin-bottom: 40px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 16px; color: #818cf8;">5. Security</h2>
+        <p style="margin-bottom: 16px;">By keeping your data local to your device, we minimize the risk of data breaches. We follow industry-standard practices for browser extension development to ensure your environment remains secure.</p>
+      </section>
+
+      <section style="margin-bottom: 40px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 16px; color: #818cf8;">6. Changes to This Policy</h2>
+        <p style="margin-bottom: 16px;">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+      </section>
+
+      <section style="margin-bottom: 40px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 16px; color: #818cf8;">7. Contact Us</h2>
+        <p style="margin-bottom: 16px;">If you have any questions about this Privacy Policy, please contact us at:</p>
+        <p style="color: #818cf8; font-weight: 500;">Email: buildinfinity8@gmail.com</p>
+      </section>
+    </main>
 
 
     <footer style="text-align: center; padding-bottom: 40px; color: var(--text-muted); font-size: 0.9rem;">
-      <p>© 2026 Build Infinity 8. Building in public.</p>
+      <p>© 2026 Build Infinity 8. Building in public. | <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></p>
     </footer>
   </div>
 
