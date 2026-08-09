@@ -62,6 +62,8 @@
     </style>
     <link rel="stylesheet" href="style.css">
     <script defer src="autoload/autoload.js"></script>
+    <script defer src="autoload/products-render.js"></script>
+    <script defer src="autoload/products.js"></script>
 
 </head>
 
@@ -89,61 +91,46 @@
                         <h2>Featured</h2>
                         <a href="#products">Explore</a>
                     </div>
-                    <div class="pritem">
-                        <img class="appicon"
-                            src="https://lh3.googleusercontent.com/iOdN2mVoJw2E4LsJo2YdQPStSVQz-1WmaH0mCUAkyNlP-tpQcRnnikOiYpzQF51VVlnGWR2a1O0gfFvQlYLAnc-S"
-                            alt="">
-                        <div class="apptext">
-                            <h3>Nori Cam</h3>
-                            <div class="tags">
-                                <span>Camera Filters</span>
-                                <span>Overlays</span>
-                                <span> 105 users</span>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pritem">
-                        <img class="appicon"
-                            src="https://lh3.googleusercontent.com/j9bNP4QQB1DxWTYBoj7DmICyY9_RQcWHPPdjuiB61cvB1Zrk4YBpRH0svq8SNBygI1YvamVj28j5XitHW68U_yia0lk"
-                            alt="">
-                        <div class="apptext">
-                            <h3>Pomori</h3>
-                            <div class="tags">
-                                <span>Pomodoro Timer</span>
-                                <span>Productivity</span>
-                                <span> 10 users</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="featuredSpotlight"><!-- PRODUCTS:FEATURED -->
+        <div class="pritem">
+            <img class="appicon" src="https://lh3.googleusercontent.com/iOdN2mVoJw2E4LsJo2YdQPStSVQz-1WmaH0mCUAkyNlP-tpQcRnnikOiYpzQF51VVlnGWR2a1O0gfFvQlYLAnc-S" alt="">
+            <div class="apptext">
+                <h3>Nori Cam</h3>
+                <div class="tags">
+                    <span>Chrome Extension</span> <span>Camera</span>
+                    <span>289 users</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="pritem">
+            <img class="appicon" src="https://cdn.discordapp.com/app-icons/1526987244001296514/faad0e55a1ee7df69ca1c7a164458416.png" alt="">
+            <div class="apptext">
+                <h3>Notes 101</h3>
+                <div class="tags">
+                    <span>Discord Bot</span> <span>Meeting Notes</span>
+                    <span>20 users</span>
+                </div>
+            </div>
+        </div>
+    <!-- /PRODUCTS:FEATURED --></div>
                 </div>
                 <div class="spotlight">
                     <div class="title">
                         <h2>Upcoming</h2>
                         <a href="#giveidea">Suggest Idea</a>
                     </div>
-                    <div class="pritem">
-                        <img class="appicon" src="logo/logo-sm.png" alt="">
-                        <div class="apptext">
-                            <h3>Notes101</h3>
-                            <div class="tags">
-                                <span>Discord Bot</span>
-                                <span>Meeting Notes</span>
-                                <span>Team Updates</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pritem">
-                        <img class="appicon" src="logo/logo-sm.png" alt="">
-                        <div class="apptext">
-                            <h3>Link Shortener</h3>
-                            <div class="tags">
-                                <span>URL Shortener</span>
-                                <span>Link Management</span>
-                                <span>Expiring Redirects</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="upcomingSpotlight"><!-- PRODUCTS:UPCOMING -->
+        <div class="pritem">
+            <img class="appicon" src="logo/logo-sm.png" alt="">
+            <div class="apptext">
+                <h3>Link Shortener</h3>
+                <div class="tags">
+                    <span>URL Shortener</span> <span>Link Management</span> <span>Expiring Redirects</span>
+                </div>
+            </div>
+        </div>
+    <!-- /PRODUCTS:UPCOMING --></div>
                 </div>
             </div>
 
@@ -151,86 +138,82 @@
         <div id="products">
             <div class="heading">
                 <h1>Our Products</h1>
-                <div class="tags"><button>Latest</button> <button>Top</button></div>
+                <div class="tags"><button data-filter="latest">Latest</button> <button data-filter="top"
+                        class="active">Top</button></div>
             </div>
-            <div class="itemlist">
-                <div class="item">
-
-                    <div class="logo">
-                        <img src="https://lh3.googleusercontent.com/iOdN2mVoJw2E4LsJo2YdQPStSVQz-1WmaH0mCUAkyNlP-tpQcRnnikOiYpzQF51VVlnGWR2a1O0gfFvQlYLAnc-S"
-                            alt="">
-
-                    </div>
-                    <div class="context">
-                        <h3>Nori Cam</h3>
-                        <p>A Chrome extension camera app with text and image overlays, basic and advanced filters,
-                            zoom, and all the essentials you need for calls and recordings.</p>
-                        <div class="tags"> <span> 105 users</span> <span>Chrome Extension</span> <span>Camera</span>
-                            <span>Overlays</span>
-                            <span>Filters</span>
-                        </div>
-                    </div>
-                    <a class="itembtn"
-                        href="https://chromewebstore.google.com/detail/infinityvcam/kckmcaholkgphbbjcijcghjgciagndab"
-                        target="_blank" rel="noopener">
-                        <img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1" alt="">
-                    </a>
+            <div class="itemlist" id="productsList"><!-- PRODUCTS:GRID -->
+            <div class="item">
+                <div class="logo">
+                    <img src="https://lh3.googleusercontent.com/iOdN2mVoJw2E4LsJo2YdQPStSVQz-1WmaH0mCUAkyNlP-tpQcRnnikOiYpzQF51VVlnGWR2a1O0gfFvQlYLAnc-S" alt="">
                 </div>
-                <div class="item">
-
-                    <div class="logo">
-                        <img src="https://lh3.googleusercontent.com/j9bNP4QQB1DxWTYBoj7DmICyY9_RQcWHPPdjuiB61cvB1Zrk4YBpRH0svq8SNBygI1YvamVj28j5XitHW68U_yia0lk"
-                            alt="">
-                    </div>
-                    <div class="context">
-                        <h3>Pomori</h3>
-                        <p>A pomodoro-style clock extension — start and stop custom timers, name them, and stay
-                            focused with a few simple, no-nonsense features.</p>
-                        <div class="tags"><span> 10 users</span> <span>Chrome Extension</span> <span>Pomodoro
-                                Timer</span>
-                            <span>Productivity</span>
-                        </div>
-                    </div>
-                    <a class="itembtn"
-                        href="https://chromewebstore.google.com/detail/pomoinfinity/imipbhidbjfooicfmljocgklihnhekcp"
-                        target="_blank" rel="noopener">
-                        <img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1" alt="">
-                    </a>
+                <div class="context">
+                    <h3>Nori Cam</h3>
+                    <p>A Chrome extension camera app with text and image overlays, basic and advanced filters, zoom, and all the essentials you need for calls and recordings.</p>
+                    <div class="tags"><span>289 users</span> <span>Chrome Extension</span> <span>Camera</span> <span>Overlays</span> <span>Filters</span></div>
                 </div>
-                <div class="item">
-
-                    <div class="logo">
-                        <img src="logo/logo-sm.png" alt="">
-
-                    </div>
-                    <div class="context">
-                        <h3>Notes101</h3>
-                        <p>A Discord bot that records on-demand voice meetings, generates notes automatically, and
-                            helps teams track updates and progress with regular member check-ins.</p>
-                        <div class="tags"> <span>Discord Bot</span> <span>Meeting Notes</span> <span>Team Updates</span>
-                            <span>Coming Soon</span>
-                        </div>
-                    </div>
-                    <button><img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1"
-                            alt=""></button>
-                </div>
-                <div class="item">
-
-                    <div class="logo">
-                        <img src="logo/logo-sm.png" alt="">
-
-                    </div>
-                    <div class="context">
-                        <h3>Link Shortener</h3>
-                        <p>Shorten links, manage where each one leads, see who's clicking through, and set a backup
-                            redirect for when the destination link expires.</p>
-                        <div class="tags"> <span>URL Shortener</span> <span>Link Management</span> <span>Expiring
-                                Redirects</span> <span>Coming Soon</span> </div>
-                    </div>
-                    <button><img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1"
-                            alt=""></button>
-                </div>
+                <a class="itembtn" href="https://chromewebstore.google.com/detail/infinityvcam/kckmcaholkgphbbjcijcghjgciagndab" target="_blank" rel="noopener"><img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1" alt=""></a>
             </div>
+        
+            <div class="item">
+                <div class="logo">
+                    <img src="https://cdn.discordapp.com/app-icons/1526987244001296514/faad0e55a1ee7df69ca1c7a164458416.png" alt="">
+                </div>
+                <div class="context">
+                    <h3>Notes 101</h3>
+                    <p>A Discord bot that records on-demand voice meetings, generates notes automatically, and helps teams track updates and progress with regular member check-ins.</p>
+                    <div class="tags"><span>20 users</span> <span>Discord Bot</span> <span>Meeting Notes</span> <span>Team Updates</span></div>
+                </div>
+                <a class="itembtn" href="https://discord.com/oauth2/authorize?client_id=1526987244001296514&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener"><img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1" alt=""></a>
+            </div>
+        
+            <div class="item">
+                <div class="logo">
+                    <img src="https://lh3.googleusercontent.com/j9bNP4QQB1DxWTYBoj7DmICyY9_RQcWHPPdjuiB61cvB1Zrk4YBpRH0svq8SNBygI1YvamVj28j5XitHW68U_yia0lk" alt="">
+                </div>
+                <div class="context">
+                    <h3>Pomori</h3>
+                    <p>A pomodoro-style clock extension — start and stop custom timers, name them, and stay focused with a few simple, no-nonsense features.</p>
+                    <div class="tags"><span>10 users</span> <span>Chrome Extension</span> <span>Pomodoro Timer</span> <span>Productivity</span></div>
+                </div>
+                <a class="itembtn" href="https://chromewebstore.google.com/detail/pomoinfinity/imipbhidbjfooicfmljocgklihnhekcp" target="_blank" rel="noopener"><img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1" alt=""></a>
+            </div>
+        
+            <div class="item">
+                <div class="logo">
+                    <img src="https://lh3.googleusercontent.com/YGNn7Zr2xETUzLA3VMGSrJQ-nrplvkBqQj-U556Hjf-9MQLF0_I-hJR5-XQ9aLayPRSWY-qxAAaV8buMqMd-CXWAv9c" alt="">
+                </div>
+                <div class="context">
+                    <h3>Nori Scraptes Images</h3>
+                    <p>A Chrome extension that grabs every product image link from a page and lets you copy them in one click. It has dedicated scrapers for Amazon, Flipkart, and Myntra, plus a generic fallback that detects reasonably large images on any other site.</p>
+                    <div class="tags"><span>10 users</span> <span>Chrome Extension</span> <span>Image Scraper</span> <span>Ease Of Use</span></div>
+                </div>
+                <a class="itembtn" href="https://chromewebstore.google.com/detail/nori-scrapes-images/kpnoaifoplbdignomjpfddnmammfmhka" target="_blank" rel="noopener"><img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1" alt=""></a>
+            </div>
+        
+            <div class="item">
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/Omnori/Dark-moon/refs/heads/main/Assets/logo.png" alt="">
+                </div>
+                <div class="context">
+                    <h3>Dark Moon</h3>
+                    <p>A Computer Software that can control you external display brightness natively , and effortlessly</p>
+                    <div class="tags"><span>10 users</span> <span>Brightness</span> <span>Native</span> <span>Windows</span> <span>Linux</span></div>
+                </div>
+                <a class="itembtn" href="https://github.com/Omnori/Dark-moon/releases/tag/v1.0.3" target="_blank" rel="noopener"><img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1" alt=""></a>
+            </div>
+        
+            <div class="item">
+                <div class="logo">
+                    <img src="logo/logo-sm.png" alt="">
+                </div>
+                <div class="context">
+                    <h3>Link Shortener</h3>
+                    <p>Shorten links, manage where each one leads, see who's clicking through, and set a backup redirect for when the destination link expires.</p>
+                    <div class="tags"><span>URL Shortener</span> <span>Link Management</span> <span>Expiring Redirects</span> <span>Coming Soon</span></div>
+                </div>
+                <button><img src="https://img.icons8.com/?size=100&id=85504&format=png&color=f1f1f1" alt=""></button>
+            </div>
+        <!-- /PRODUCTS:GRID --></div>
             <div class="moresec">
                 <a href="#products" class="viewmore"> View all <img
                         src="https://img.icons8.com/?size=100&id=85123&format=png&color=f1f1f1" alt=""></a>
