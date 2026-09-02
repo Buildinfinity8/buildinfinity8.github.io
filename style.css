@@ -84,20 +84,22 @@ html {
     }
 
     #maincontainer,
-    header,
     footer {
         max-width: 1800px;
     }
+
+    header {
+        padding-left: max(5%, calc((100% - 1800px) / 2));
+        padding-right: max(5%, calc((100% - 1800px) / 2));
+    }
 }
 
-/* 3. Header Section (Perfectly Centered & Blurred Overlays) */
+/* 3. Header Section (Flat Full-Width Rectangle) */
 header {
     position: fixed;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1600px;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     display: flex;
     align-items: center;
@@ -106,11 +108,11 @@ header {
     background-color: rgba(241, 241, 241, 0.95);
     backdrop-filter: blur(12px);
     /* Content beautifully blurs as it passes underneath */
-    padding: 0.75rem 2rem;
-    border-radius: 50px;
-    /* Fully rounded pill shape matches high-end UI patterns */
+    padding: 0.85rem max(5%, calc((100% - 1600px) / 2));
+    border-radius: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     z-index: 1000;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 
     /* Safe color override for header child elements */
     a,
@@ -202,11 +204,11 @@ header {
 /* Tablet & mobile nav: collapse inline links into a toggled dropdown panel */
 @media (max-width: 860px) {
     header {
-        padding: 0.65rem 1.25rem;
+        padding: 0.75rem 5%;
 
         .navi {
             position: fixed;
-            top: 4.75rem;
+            top: 4.25rem;
             left: 50%;
             transform: translateX(-50%) translateY(-12px);
             width: 90%;
@@ -323,81 +325,113 @@ header {
         width: 30%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        gap: 1.5rem;
-        /* Separates multiple featured product containers evenly */
+        justify-content: flex-start;
+        gap: 2rem;
 
         .spotlight {
             padding: 1.5rem;
             border-radius: 1.25rem;
             width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            /* Sophisticated dark border */
-            background-color: rgba(255, 255, 255, 0.02);
+            background-color: rgba(255, 255, 255, 0.045);
+            backdrop-filter: blur(8px);
 
             .title {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                margin-bottom: 1.25rem;
+                margin-bottom: 1rem;
 
                 h2 {
-                    font-size: 1.25rem;
+                    font-size: 1.1rem;
                     font-weight: 600;
-
                     color: rgba(255, 255, 255, 0.9);
+                    letter-spacing: -0.01em;
                 }
 
                 a {
                     font-size: 0.75rem;
                     color: var(--accentgreen);
                     font-weight: 600;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                    transition: opacity 0.2s ease;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
                 }
             }
 
-
+            .pritem-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
 
             .pritem {
-                background-color: var(--whitesolid);
-                padding: 0.75rem 1rem;
-                margin: 0.75rem 0;
-                border-radius: 0.75rem;
-                color: var(--primarybg);
-
-                /* FIXES THE SQUISHED LAYOUT IN SCREENSHOT */
+                background-color: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 0.875rem 1rem;
+                border-radius: 0.875rem;
+                color: #ffffff;
                 display: flex;
                 align-items: center;
                 gap: 1rem;
+                text-decoration: none;
+                transition: all 0.2s ease;
 
-                img {
-                    height: 2.5rem;
-                    width: 2.5rem;
-                    object-fit: cover;
-                    border-radius: 0.5rem;
-                    background-color: rgba(0, 0, 0, 0.05);
-                    /* Safe background placeholder */
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.06);
+                    border-color: rgba(255, 255, 255, 0.12);
+                    transform: translateY(-1px);
                 }
 
-                /* Text container wrap to layout Title & Subtitle nicely */
+                img {
+                    height: 2.75rem;
+                    width: 2.75rem;
+                    object-fit: cover;
+                    border-radius: 0.625rem;
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    background-color: rgba(255, 255, 255, 0.05);
+                    flex-shrink: 0;
+                }
+
                 .apptext {
                     display: flex;
                     flex-direction: column;
+                    gap: 0.2rem;
+                    overflow: hidden;
 
                     h3 {
-                        font-weight: 700;
-                        font-size: 1rem;
-                    }
-
-                    div.tags {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 0.5rem;
-                    }
-
-                    div span {
-                        font-size: 0.8rem;
-                        opacity: 0.7;
+                        font-weight: 600;
+                        font-size: 0.95rem;
+                        color: rgba(255, 255, 255, 0.95);
                         white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .tags {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 0.35rem;
+
+                        span {
+                            font-size: 0.75rem;
+                            color: rgba(255, 255, 255, 0.5);
+                            font-weight: 400;
+
+                            /* Adds subtle visual dots between tags */
+                            &:not(:last-child):after {
+                                content: "•";
+                                margin-left: 0.35rem;
+                                opacity: 0.4;
+                            }
+                        }
                     }
                 }
             }
@@ -526,6 +560,7 @@ header {
                 overflow: hidden;
                 background-color: rgba(103, 103, 103, 0.501);
                 border-radius: 1rem;
+                border: 1px solid rgba(255, 255, 255, 0.12);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -585,6 +620,10 @@ header {
                     width: 2rem;
                 }
             }
+
+            &.item-hidden {
+                display: none;
+            }
         }
     }
 
@@ -592,17 +631,35 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 1.5rem;
 
+        button,
         a {
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             color: var(--accentgreen);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-family: inherit;
+            padding: 0.5rem 1rem;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
 
             img {
-                height: 2rem;
-                margin: 0 0 0.25rem 0.5rem;
+                height: 1.5rem;
+                margin: 0 0 0 0.5rem;
+                transition: transform 0.25s ease;
+            }
+
+            &.expanded img {
+                transform: rotate(180deg);
             }
         }
     }

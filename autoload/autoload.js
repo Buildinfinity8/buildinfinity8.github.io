@@ -11,7 +11,7 @@ const HEADER_HTML = `
     <div class="navi">
         <a href="index.html#products"> Products </a>
         <a href="services.html"> Services</a>
-        <a href="index.html#giveidea"> Give Ideas </a>
+        <!-- <a href="index.html#giveidea"> Give Ideas </a> -->
         <a href="about.html"> About</a>
     </div>
     <div class="socials">
@@ -33,8 +33,7 @@ const FOOTER_HTML = `
                 <img src="logo/logo.png" alt="Omnori Logo">
                 <span>Omnori</span>
             </a>
-            <p>Growth, Lead By Technology. A relentless product lab building solutions for daily friction —
-                prototyped rapidly, shipped continuously.</p>
+            <p>We give businesses software and marketing services and build tools to solve their problems. When we spot the same problem again and again, we turn that tool into a SaaS product anyone can use.</p>
             <div class="socials">
                 <a href="https://www.instagram.com/omnori.tech" target="_blank" rel="noopener"><img src="https://img.icons8.com/?size=100&id=85140&format=png&color=f1f1f1" alt="Instagram"></a>
                 <a href="https://github.com/omnori" target="_blank" rel="noopener"><img src="https://img.icons8.com/?size=100&id=106567&format=png&color=f1f1f1" alt="GitHub"></a>
@@ -46,7 +45,7 @@ const FOOTER_HTML = `
                 <h4>Explore</h4>
                 <a href="index.html#products">Products</a>
                 <a href="services.html">Services</a>
-                <a href="index.html#giveidea">Give Idea</a>
+                <!-- <a href="index.html#giveidea">Give Idea</a> -->
             </div>
             <div class="linkcol">
                 <h4>Company</h4>
@@ -57,7 +56,7 @@ const FOOTER_HTML = `
     </div>
     <div class="footerbottom">
         <p>&copy; 2026 Omnori. All rights reserved.</p>
-        <p>Built by a relentless product lab.</p>
+        <p>Software, marketing services, and SaaS products.</p>
     </div>
 `
 
